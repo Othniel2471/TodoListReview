@@ -124,19 +124,15 @@ class Todo {
     });
   };
 
-  displayItem = () => {
-    this.addItem();
-    const updatedList = localStorage.getItem('todoLists');
-    const fullList = JSON.parse(updatedList);
-    this.displayList(fullList);
-    this.clearField();
-  }
-
   showItem = () => {
     const InputField = document.querySelector('.addtodo');
     InputField.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        this.displayItem();
+        this.addItem();
+        const updatedList = localStorage.getItem('todoLists');
+        const fullList = JSON.parse(updatedList);
+        this.displayList(fullList);
+        this.clearField();
         Todo.i += 1;
       }
     });

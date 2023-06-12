@@ -121,18 +121,15 @@ var Todo = /*#__PURE__*/_createClass(function Todo(_index, _completed, _descript
       }
     });
   });
-  _defineProperty(this, "displayItem", function () {
-    _this.addItem();
-    var updatedList = localStorage.getItem('todoLists');
-    var fullList = JSON.parse(updatedList);
-    _this.displayList(fullList);
-    _this.clearField();
-  });
   _defineProperty(this, "showItem", function () {
     var InputField = document.querySelector('.addtodo');
     InputField.addEventListener('keypress', function (event) {
       if (event.key === 'Enter') {
-        _this.displayItem();
+        _this.addItem();
+        var updatedList = localStorage.getItem('todoLists');
+        var fullList = JSON.parse(updatedList);
+        _this.displayList(fullList);
+        _this.clearField();
         Todo.i += 1;
       }
     });
@@ -868,4 +865,4 @@ deleteCompleted.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle9c5f48fa5f592d6b1188.js.map
+//# sourceMappingURL=bundleb2f1e036689753307306.js.map
