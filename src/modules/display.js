@@ -25,13 +25,7 @@ class Todo {
     Todo.inputField = document.querySelector('.addtodo');
     Todo.listContainer = document.querySelector('.todolist');
 
-    // Retrieve the saved state from localStorage
-    const savedTodoLists = localStorage.getItem('todoLists');
-
-    if (savedTodoLists) {
-      // Parse the saved state back into a Todo array
-      Todo.todoLists = JSON.parse(savedTodoLists);
-    }
+    Todo.todoLists = JSON.parse(localStorage.getItem('todoLists')) || [];
 
     const inv = new Todo();
     inv.showItem();

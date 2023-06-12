@@ -147,13 +147,7 @@ _defineProperty(Todo, "i", 1);
 _defineProperty(Todo, "initialize", function () {
   Todo.inputField = document.querySelector('.addtodo');
   Todo.listContainer = document.querySelector('.todolist');
-
-  // Retrieve the saved state from localStorage
-  var savedTodoLists = localStorage.getItem('todoLists');
-  if (savedTodoLists) {
-    // Parse the saved state back into a Todo array
-    Todo.todoLists = JSON.parse(savedTodoLists);
-  }
+  Todo.todoLists = JSON.parse(localStorage.getItem('todoLists')) || [];
   var inv = new Todo();
   inv.showItem();
   window.addEventListener('DOMContentLoaded', function () {
@@ -865,4 +859,4 @@ deleteCompleted.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleb2f1e036689753307306.js.map
+//# sourceMappingURL=bundle90a91bd53cd80702c29d.js.map
